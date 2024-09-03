@@ -1,0 +1,39 @@
+src = ["mp_connect_backend"]
+target-version = "py312"
+fix = true
+output-format = "full"
+line-length = 120
+indent-width = 4
+
+[lint]
+select = ["E", "F", "N801", "N802", "N803", "N805", "N806", "Q0"]
+ignore = ["F401"]
+exclude = [
+    "alembic/versions/*",
+]
+fixable = ["ALL"]
+unfixable = []
+
+[format]
+quote-style = "double"
+indent-style = "tab"
+skip-magic-trailing-comma = false
+docstring-code-format = true
+docstring-code-line-length = 120
+
+[lint.flake8-quotes]
+inline-quotes = "double"
+multiline-quotes = "double"
+docstring-quotes = "double"
+
+[lint.flake8-tidy-imports]
+ban-relative-imports = "all"
+
+[lint.flake8-type-checking]
+strict = true
+
+[lint.isort]
+combine-as-imports = true
+force-single-line = false
+force-wrap-aliases = true
+split-on-trailing-comma = true
