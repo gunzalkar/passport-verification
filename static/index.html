@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container" id="uploadContainer">
+        <h1>Upload Passport</h1>
+        <button id="uploadButton" class="upload-button">Gallery</button>
+        <button id="cameraButton" class="upload-button">Take a Photo</button>
+        <input type="file" id="fileInput" accept="image/*" style="display:none">
+        <div id="loader" class="loader" style="display:none;"></div>
+        <div id="errorMessage" class="error-message"></div>
+    </div>
+
+    <div class="full-screen" id="cameraView" style="display:none;">
+        <video id="camera" autoplay></video>
+        <div class="camera-buttons">
+            <button id="takePhotoButton" class="camera-button">Capture Photo</button>
+            <button id="cancelButton" class="camera-button">Cancel</button>
+        </div>
+        <canvas id="canvas" style="display:none;"></canvas>
+    </div>
+
+    <div class="container" id="resultContainer" style="display:none;">
+        <h2>Extracted Data</h2>
+        <div id="extractedData" class="extracted-data"></div>
+        <div id="imagesContainer" class="images-container">
+            <div class="image-item" id="photoContainer">
+                <div class="key-label">Photo</div>
+                <img id="photo" alt="Face Image">
+            </div>
+            <div class="image-item" id="mrzContainer">
+                <div class="key-label">MRZ Lines</div>
+                <img id="mrz" alt="MRZ Image">
+            </div>
+        </div>
+        <button id="backButton" class="upload-button">Back</button>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
